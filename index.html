@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Age Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="mainbox">
+        <div id="input-section">
+            <h1>Age Calculator</h1>
+            <div class="input-container">
+                <label for="name">Enter Your Name:</label>
+                <input required type="text" id="name" placeholder="Your Name">
+                
+                <label for="birthday">Enter Your Birth Date:</label>
+                <input required type="date" id="birthday">
+            </div>
+            <button onclick="ageCalculate()">Calculate</button>
+        </div>
+
+        <div id="resultbox" class="hidden">
+            <h2 id="resultname"></h2>
+            <p id="resultage"></p>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <button onclick="resetCalculator()">OK</button>
+        </div>
+    </div>
 </body>
 <script src="app.js"></script>
 </html>

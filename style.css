@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #1a273f, #223953);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .mainbox {
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width: 90%;
+    max-width: 400px;
+    transition: all 5s ease-in-out;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff416c;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background: #ff4b2b;
+  }
+  
+  #resultbox {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Progress Bar */
+  .progress-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-top: 15px;
+    height: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 10px;
+    background: #ff4b2b;
+    border-radius: 45px;
+    transition: width 5s ease-in-out;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .mainbox {
+      padding: 20px;
+    }
+  }
