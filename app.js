@@ -1,29 +1,33 @@
+/*
+    Age Calculator Script
+    Developed by: Muhammad Sarfaraz
+*/
+
 function ageCalculate() {
   let time = new Date();
   let userName = document.getElementById('name').value.trim();
   let userBirthDay = document.getElementById('birthday').value;
   
   if (!userName || !userBirthDay) {
-    alert('Please enter your name and date of birth!');
-    return;
+      alert('Please Enter Your Name and Date of Birth!');
+      return;
   }
   
   let nameUpperCase = userName.toUpperCase();
-  let birthDate = new Date(userBirthDay);
-  let today = new Date();
+  let userComBirthDay = new Date(userBirthDay);
+  
+  let userBirthYears = userComBirthDay.getFullYear();
+  let currentYear = time.getFullYear();
+  let userBirthMonths = userComBirthDay.getMonth();
+  let currentMonth = time.getMonth();
+  let userBirthDays = userComBirthDay.getDate();
+  let currentDay = time.getDate();
 
-  let birthYear = birthDate.getFullYear();
-  let birthMonth = birthDate.getMonth();
-  let birthDay = birthDate.getDate();
+  let finalYears = currentYear - userBirthYears;
+  let finalMonths = currentMonth - userBirthMonths;
+  let finalDays = currentDay - userBirthDays;
 
-  let currentYear = today.getFullYear();
-  let currentMonth = today.getMonth();
-  let currentDay = today.getDate();
-
-  let finalYears = currentYear - birthYear;
-  let finalMonths = currentMonth - birthMonth;
-  let finalDays = currentDay - birthDay;
-
+  // Adjust days and months if negative
   if (finalDays < 0) {
       finalMonths--;
       let lastMonth = new Date(currentYear, currentMonth, 0);
@@ -34,21 +38,23 @@ function ageCalculate() {
       finalYears--;
       finalMonths += 12;
   }
-  
+
   document.getElementById('resultname').textContent = `Dear ${nameUpperCase},`;
   document.getElementById('resultage').textContent = `You are ${finalYears} years, ${finalMonths} months, and ${finalDays} days old.`;
-
+  
   let progress = (finalYears / 100) * 100;
   document.getElementById('progressBar').style.width = `${progress}%`;
-
+  
   document.getElementById('input-section').classList.add('hidden');
   document.getElementById('resultbox').classList.remove('hidden');
+
+  document.getElementById('developer').textContent = "Developed by Muhammad Sarfaraz";
 }
 
 function resetCalculator() {
   document.getElementById('input-section').classList.remove('hidden');
   document.getElementById('resultbox').classList.add('hidden');
-
+  
   document.getElementById('name').value = '';
   document.getElementById('birthday').value = '';
 }
